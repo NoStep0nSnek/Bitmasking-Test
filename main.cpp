@@ -14,12 +14,11 @@ vector<char> bits_to_bytes(string bits) {
     vector<char> bytes;
     char byte = 0;
 
-    for (int i = 0; i < bits.size() / 8; i++) {
+    for (int i = 0; i < bits.size() % 8; i++) {
         for (int j = 0; j < 8; j++) {
             if (bits[j + (i * 8)] == '1') {
                 bitset(byte, j);
             }
-            cout << bitcheck(byte, j) << ",";
         }
         bytes.push_back(byte);
         byte = 0;
@@ -48,6 +47,7 @@ int main() {
 
     string bits = ("01110010"); // Byte #1 (8 bits)
     bits.append("11001001"); // Byte #2 (8 bits)
+    bits.append("010"); // 3 bits
     vector<char> bytes = bits_to_bytes(bits);
     cout << "\nBYTES:\n";
     for (auto z : bytes) {
