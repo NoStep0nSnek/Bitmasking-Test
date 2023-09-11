@@ -39,7 +39,6 @@ int main() {
     string bits = ("01110010"); // Byte #1 (8 bits)
     bits.append("11001001"); // Byte #2 (8 bits)
     bits.append("010"); // 3 bits
-    bits = "110011011001011110";
     vector<char> bytes = bits_to_bytes(bits);
     cout << "\nBYTES:\n";
     for (auto z : bytes) {
